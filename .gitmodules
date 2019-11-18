@@ -7,3 +7,6 @@
 [submodule "tpm"]
 	path = tpm
 	url = https://github.com/tmux-plugins/tpm
+[submodule "vimfiles"]
+	path = vimfiles
+	url = https://github.com/russell-ball/vimfiles.git
