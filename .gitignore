@@ -21,3 +21,5 @@ session*.vim
 tags
 
 vendor/
+
+extra.bash
