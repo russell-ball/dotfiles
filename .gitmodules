@@ -3,7 +3,7 @@
 	url = https://github.com/anishathalye/dotbot
 [submodule "vimfiles"]
 	path = vimfiles
-	url = https://github.com/jshafton/vimfiles.git
+	url = https://github.com/russell-ball/vimfiles.git
 [submodule "fzf"]
 	path = fzf
 	url = https://github.com/junegunn/fzf.git

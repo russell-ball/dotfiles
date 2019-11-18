@@ -78,8 +78,8 @@
   default = "simple"
 
 [user]
-  name = "Jacob Shafton"
-  email = jacob@shafton.com
+  name = "Russell Ball"
+  email = rtball2@gmail.com
 
 [merge]
   # Include summaries of merged commits in newly created merge commit messages
