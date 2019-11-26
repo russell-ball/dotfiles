@@ -68,8 +68,8 @@ function pgcli-ec2 {
 
   instance_ip=$(ec2-ip-from-tags)
   echo "Connecting to $instance_ip..."
-  pgcli -h "$instance_ip" -U jshafton -d postgres
-  history -s pgcli -h "$instance_ip" -U jshafton -d postgres
+  pgcli -h "$instance_ip" -U rball -d postgres
+  history -s pgcli -h "$instance_ip" -U rball -d postgres
 }
 
 function pgcli-rds {
@@ -77,6 +77,6 @@ function pgcli-rds {
 
   instance_endpoint=$(rds-find-endpoint)
   echo "Connecting to $instance_endpoint..."
-  pgcli -h "$instance_endpoint" -U jshafton -d postgres
-  history -s pgcli -h "$instance_endpoint" -U jshafton -d postgres
+  pgcli -h "$instance_endpoint" -U rball -d postgres
+  history -s pgcli -h "$instance_endpoint" -U rball -d postgres
 }
