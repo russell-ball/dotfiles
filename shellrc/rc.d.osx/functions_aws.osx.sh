@@ -64,12 +64,16 @@ function ssh-ec2 {
 }
 
 function pgcli-ec2 {
-  local instance_ip
-
+  local instance_ip database local_port remote_port
   instance_ip=$(ec2-ip-from-tags)
+  database="${1-postgres}"
+  local_port="$(awk 'BEGIN{srand();print int(rand()*(63000-2000))+2000 }')"
+  remote_port=5432
+  remote_user="rball"
   echo "Connecting to $instance_ip..."
-  pgcli -h "$instance_ip" -U rball -d postgres
-  history -s pgcli -h "$instance_ip" -U rball -d postgres
+  ssh -f -o ExitOnForwardFailure=yes -L "$local_port:$instance_ip:$remote_port" "$remote_user@$instance_ip" sleep 10
+  pgcli -h "localhost" -p "$local_port" -U "$remote_user" -d "$database"
+  history -s pgcli -h "localhost" -p "$local_port" -U "$remote_user" -d "$database"
 }
 
 function pgcli-rds {
